@@ -45,20 +45,26 @@ ResultSet resultSet = null;
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util1.css">
 	<link rel="stylesheet" type="text/css" href="css/main1.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
 <!--===============================================================================================-->
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      
+        <div>
+            <header class="codrops-header">
+						<h1 style="font-size:60px;">Search for Employees</h1>	
+					</header>
         <section class="webdesigntuts-workshop">
-            <br><br><br><br>
-        <h1 style="color:grey;" align="center">Search for employee</h1>  
-	<form name="frm" method="post">		    
+      
+            <form name="frm" method="post">	
+  
 		<input type="search" name="pid" id="pid" placeholder="User Name of Employee">		    	
 		<button name="submit" value="Search">Search</button>
 	</form>
 </section>
-        <br><br><br><br>
+
 <!--   <div class="limiter">
         -->
 <!--<h1>Search for an Employee</h1>
@@ -84,9 +90,7 @@ resultSet = statement.executeQuery(sql);
 int i=0;
 while(resultSet.next()){
 %>
-	
-        <br><br><br><br>
-        <div class="limiter">
+<div>
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<div class="table100 ver1">
@@ -94,7 +98,7 @@ while(resultSet.next()){
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1"> Employee Details</th>
+									<th class="cell100 column1">Employee Details</th>
 								</tr>
 							</thead>
 					
@@ -106,22 +110,22 @@ while(resultSet.next()){
 							<table>
 								<thead>
 									<tr class="row100 head">
-										<th class="cell100 column2">First Name</th>
-										<th class="cell100 column3">Last Name</th>
-										<th class="cell100 column4" type="password">Password</th>
-										<th class="cell100 column5">Email</th>
-										<th class="cell100 column6">User Name</th>
+										<th class="cell100 column2">User Name</th>
+										<th class="cell100 column3">First Name</th>
+										<th class="cell100 column4">Last Name</th>
+										<th class="cell100 column5">Password</th>
+										<th class="cell100 column6">Email</th>
 										<th class="cell100 column7">Update Values</th>
 										<th class="cell100 column8">Delete Employees</th>
 									</tr>
 								</thead>
                                                                 <tbody>
                                                                 	<tr class="row100 body">
-										<td class="cell100 column2"><%=resultSet.getString("fname") %></td>
-										<td class="cell100 column3"><%=resultSet.getString("lname") %></td>
-										<td class="cell100 column4"><%=resultSet.getString("password") %></td>
-										<td class="cell100 column5"><%=resultSet.getString("email") %></td>
-										<td class="cell100 column6"><%=resultSet.getString("userid") %></td>
+										<td class="cell100 column2"><%=resultSet.getString("userid") %></td>
+										<td class="cell100 column3"><%=resultSet.getString("fname") %></td>
+										<td class="cell100 column4"><%=resultSet.getString("lname") %></td>
+										<td class="cell100 column5"><%=resultSet.getString("password") %></td>
+										<td class="cell100 column6"><%=resultSet.getString("email") %></td>
 										<td class="cell100 column7"><a href="update.jsp?id=<%=resultSet.getString("userid")%>">Update</a></td>
 										<td class="cell100 column8"><a href="delete.jsp?id=<%=resultSet.getString("userid") %>"><button type="button" class="delete">Delete</button></a></td>
 									</tr>
@@ -134,7 +138,8 @@ while(resultSet.next()){
 			</div>
 		</div>
 	</div>
-
+ <p><a href="index.html">Employee Login</a></p>
+       </div>
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -148,21 +153,16 @@ while(resultSet.next()){
 	<script>
 		$('.js-pscroll').each(function(){
 			var ps = new PerfectScrollbar(this);
-
 			$(window).on('resize', function(){
 				ps.update();
 			})
-
 			$(this).on('ps-x-reach-start', function(){
 				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
 			});
-
 			$(this).on('ps-scroll-x', function(){
 				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
 			});
-
 		});
-
 		
 		
 		
@@ -170,12 +170,7 @@ while(resultSet.next()){
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
-</body>
-</html>
-
-
 <!--<!DOCTYPE html>
-
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body>
@@ -209,7 +204,6 @@ while(resultSet.next()){
 <td><%=resultSet.getString("email") %></td>
 <td><a href="update.jsp?id=<%=resultSet.getString("userid")%>">Update</a></td>
 <td><a href="delete.jsp?id=<%=resultSet.getString("userid") %>"><button type="button" class="delete">Delete</button></a></td>
-
 </tr>
 </div>-->
 <%
@@ -221,6 +215,8 @@ e.printStackTrace();
 }
 %>
 <!--</table>
-
 </body>
 </html>-->
+ </body>
+</html>
+

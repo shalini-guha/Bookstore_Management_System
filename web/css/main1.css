@@ -306,45 +306,22 @@ th, td {
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);
 
 .webdesigntuts-workshop {
-	background: #151515;
+	background-image: url("images/bg.jpg");
 	height: 100%;
 	position: absolute;
 	text-align: center;
 	width: 100%;
 }
 
-.webdesigntuts-workshop:before,
-.webdesigntuts-workshop:after {
-	content: '';
-	display: block;	
-	height: 1px;
-	left: 50%;
-	margin: 0 0 0 -400px;
-	position: absolute;
-	width: 800px;
-}
-
-.webdesigntuts-workshop:before {
-	background: #444;
-	background: linear-gradient(left, #151515, #444, #151515);
-	top: 192px;
-}
-
-.webdesigntuts-workshop:after {
-	background: #000;
-	background: linear-gradient(left, #151515, #000, #151515);	
-	top: 191px;
-}
-
 .webdesigntuts-workshop form {
-	background: #111;
+	background: #c471f5;
 	background: linear-gradient(#1b1b1b, #111);
 	border: 1px solid #000;
 	border-radius: 5px;
 	box-shadow: inset 0 0 0 1px #272727;
 	display: inline-block;
 	font-size: 0px;
-	margin: 150px auto 0;
+	margin: 20px auto 0;
 	padding: 20px;
 	position: relative;
 	z-index: 1;

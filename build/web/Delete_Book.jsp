@@ -17,15 +17,12 @@ Statement st=conn.createStatement();
 try
 {
 
-String sql="Update books set quantity=quantity-1 where bid= '"+id+"'";
+String sql="Update books set quantity = (quantity-1),bcount=(bcount +1) where bid= '"+id+"'";
 int rs=st.executeUpdate(sql); 
-if( rs > 0 )
-{
+ResultSet rs1 = st.executeQuery("select * from books where bid ='"+id+"'");
+if(rs1.next()){
+
 response.sendRedirect("Search_Book.jsp");
-}
-else
-{
-int i=st.executeUpdate("DELETE FROM users WHERE bid='" + id + "' ");
 } 
 }
 catch(Exception e)
