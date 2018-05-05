@@ -3,11 +3,11 @@
     Created on : Apr 19, 2018, 9:47:43 AM
     Author     : Zlalini
 --%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%
+	<%@page import="java.sql.DriverManager"%>
+		<%@page import="java.sql.ResultSet"%>
+			<%@page import="java.sql.Statement"%>
+				<%@page import="java.sql.Connection"%>
+					<%
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
 String database = "login";
@@ -22,65 +22,48 @@ Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
 %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Search for Employee</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util1.css">
-	<link rel="stylesheet" type="text/css" href="css/main1.css">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-<!--===============================================================================================-->
-</head>
-<body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <div>
-            <header class="codrops-header">
-						<h1 style="font-size:60px;">Search for Employees</h1>	
-					</header>
-        <section class="webdesigntuts-workshop">
-      
-            <form name="frm" method="post">	
-  
-		<input type="search" name="pid" id="pid" placeholder="User Name of Employee">		    	
-		<button name="submit" value="Search">Search</button>
-	</form>
-</section>
+						<!DOCTYPE html>
+						<html lang="en">
 
-<!--   <div class="limiter">
-        -->
-<!--<h1>Search for an Employee</h1>
-  <form method="post" name="frm">
-      <table border="0" width="300" align="center" bgcolor="#e9f">
-        <tr><td colspan=2 style="font-size:12pt;" align="center">
-        <h3>Search Employee</h3></td></tr>
-        <tr><td ><b>User Name</b></td>
-          <td>: <input  type="text" name="pid" id="pid">
-        </td></tr>        
-        <tr><td colspan=2 align="center">
-        <input  type="submit" name="submit" value="Search"></td></tr>
-      </table>
-    </form>
-    </div>-->
-    <%
+						<head>
+							<title>Search for Employee</title>
+							<meta charset="UTF-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1">
+							<!--===============================================================================================-->
+							<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+							<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
+							<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+							<!--===============================================================================================-->
+							<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+							<!--===============================================================================================-->
+							<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+							<!--===============================================================================================-->
+							<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+							<!--===============================================================================================-->
+							<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+							<!--===============================================================================================-->
+							<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+							<!--===============================================================================================-->
+							<link rel="stylesheet" type="text/css" href="css/list.css" />
+							<!--===============================================================================================-->
+						</head>
+
+						<body>
+							<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+							<div>
+								<header class="codrops-header">
+									<h1 style="font-size:60px;">Search for Employees</h1>
+								</header>
+								<div align="center">
+									<section class="webdesigntuts-workshop">
+
+										<form name="frm" method="post">
+
+											<input type="search" name="pid" id="pid" placeholder="User Name of Employee" size="40">
+											<button name="submit" value="Search" class="btn btn-primary">Search</button>
+										</form>
+									</section>
+<%
 try{
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
@@ -90,123 +73,92 @@ resultSet = statement.executeQuery(sql);
 int i=0;
 while(resultSet.next()){
 %>
-<div>
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100 ver1">
-					<div class="table100-firstcol">
-						<table>
-							<thead>
-								<tr class="row100 head">
-									<th class="cell100 column1">Employee Details</th>
-								</tr>
-							</thead>
-					
-						</table>
-					</div>
-					
-					<div class="wrap-table100-nextcols js-pscroll">
-						<div class="table100-nextcols">
-							<table>
-								<thead>
-									<tr class="row100 head">
-										<th class="cell100 column2">User Name</th>
-										<th class="cell100 column3">First Name</th>
-										<th class="cell100 column4">Last Name</th>
-										<th class="cell100 column5">Password</th>
-										<th class="cell100 column6">Email</th>
-										<th class="cell100 column7">Update Values</th>
-										<th class="cell100 column8">Delete Employees</th>
-									</tr>
-								</thead>
-                                                                <tbody>
-                                                                	<tr class="row100 body">
-										<td class="cell100 column2"><%=resultSet.getString("userid") %></td>
-										<td class="cell100 column3"><%=resultSet.getString("fname") %></td>
-										<td class="cell100 column4"><%=resultSet.getString("lname") %></td>
-										<td class="cell100 column5"><%=resultSet.getString("password") %></td>
-										<td class="cell100 column6"><%=resultSet.getString("email") %></td>
-										<td class="cell100 column7"><a href="update.jsp?id=<%=resultSet.getString("userid")%>">Update</a></td>
-										<td class="cell100 column8"><a href="delete.jsp?id=<%=resultSet.getString("userid") %>"><button type="button" class="delete">Delete</button></a></td>
-									</tr>
 
-                                                                </tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
- <p><a href="index.html">Employee Login</a></p>
-       </div>
+										<div class="tbl-content">
 
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			var ps = new PerfectScrollbar(this);
-			$(window).on('resize', function(){
-				ps.update();
-			})
-			$(this).on('ps-x-reach-start', function(){
-				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
-			});
-			$(this).on('ps-scroll-x', function(){
-				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
-			});
-		});
-		
-		
-		
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-<!--<!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<body>
-<h1>Retrieve data from database in jsp</h1>
-  <form method="post" name="frm">
-      <table border="0" width="300" align="center" bgcolor="#e9f">
-        <tr><td colspan=2 style="font-size:12pt;" align="center">
-        <h3>Search User</h3></td></tr>
-        <tr><td ><b>User Name</b></td>
-          <td>: <input  type="text" name="pid" id="pid">
-        </td></tr>        
-        <tr><td colspan=2 align="center">
-        <input  type="submit" name="submit" value="Search"></td></tr>
-      </table>
-    </form>-->
+											<h2 style="color:whitesmoke;"> Employee Details </h2>
+											<br>
+											<br>
 
 
-<!--<div align ="center">
-<table border="1">
-<tr>
-<td>first name</td>
-<td>last name</td>
-<td>User Name</td>
-<td>Email</td>
-<td>Action</td>
-</tr>
-<tr>
-<td><%=resultSet.getString("fname") %></td>
-<td><%=resultSet.getString("lname") %></td>
-<td><%=resultSet.getString("userid") %></td>
-<td><%=resultSet.getString("email") %></td>
-<td><a href="update.jsp?id=<%=resultSet.getString("userid")%>">Update</a></td>
-<td><a href="delete.jsp?id=<%=resultSet.getString("userid") %>"><button type="button" class="delete">Delete</button></a></td>
-</tr>
-</div>-->
-<%
+											<table table cellpadding="0" cellspacing="0" border="1">
+												<thead>
+													<tr>
+														<th>User Name</th>
+														<th>First Name</th>
+														<th>Last Name</th>
+														<th>Password</th>
+														<th>Email</th>
+														<th>Update Values</th>
+														<th>Delete Employees</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<%=resultSet.getString("userid") %>
+														</td>
+														<td>
+															<%=resultSet.getString("fname") %>
+														</td>
+														<td>
+															<%=resultSet.getString("lname") %>
+														</td>
+														<td>
+															<%=resultSet.getString("password") %>
+														</td>
+														<td>
+															<%=resultSet.getString("email") %>
+														</td>
+														<td>
+															<a href="update.jsp?id=<%=resultSet.getString("userid")%>">
+																<button class="btn btn-warning">Update</button>
+															</a>
+														</td>
+														<td>
+															<a href="delete.jsp?id=<%=resultSet.getString("userid") %>">
+																<button class="btn btn-danger">Delete</button>
+															</a>
+														</td>
+													</tr>
+
+												</tbody>
+											</table>
+
+										</div>
+
+								</div>
+
+								<!--===============================================================================================-->
+								<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+								<!--===============================================================================================-->
+								<script src="vendor/bootstrap/js/popper.js"></script>
+								<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+								<!--===============================================================================================-->
+								<script src="vendor/select2/select2.min.js"></script>
+								<!--===============================================================================================-->
+								<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+								<script>
+									$('.js-pscroll').each(function () {
+										var ps = new PerfectScrollbar(this);
+										$(window).on('resize', function () {
+											ps.update();
+										})
+										$(this).on('ps-x-reach-start', function () {
+											$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+										});
+										$(this).on('ps-scroll-x', function () {
+											$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+										});
+									});
+
+
+
+								</script>
+								<!--===============================================================================================-->
+								<script src="js/main.js"></script>
+
+								<%
 i++;
 }
 connection.close();
@@ -214,9 +166,6 @@ connection.close();
 e.printStackTrace();
 }
 %>
-<!--</table>
-</body>
-</html>-->
- </body>
-</html>
+						</body>
 
+						</html>

@@ -14,8 +14,10 @@ Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/login
 Statement st=conn.createStatement();
 
 int i=st.executeUpdate("DELETE FROM users WHERE userid='" + id + "' ");
-out.println("Data Deleted Successfully!");
-out.println(id);
+response.sendRedirect("Search.jsp");
+%>
+<%
+
 }
 catch(Exception e)
 {

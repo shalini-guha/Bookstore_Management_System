@@ -11,7 +11,7 @@ and open the template in the editor.
 
 h1{
   font-size: 50px;
-  color: #fff;
+  color: #FF7575;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
@@ -25,10 +25,10 @@ table{
   background-color: rgba(255,255,255,0.3);
  }
 .tbl-content{
-  height:300px;
+  height:auto;
   overflow-x:auto;
   margin-top: 0px;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: dashed #FF7575;
 }
 th{
   padding: 20px 15px;
@@ -53,16 +53,24 @@ td{
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body{
-  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
-  background: linear-gradient(to right, #25c481, #25b7c4);
+  background-color:#00132d;
+  background-color: #00132d;
   font-family: 'Roboto', sans-serif;
 }
 section{
   margin: 50px;
 }
 
-
-
+th, tr,td{
+   border: 1px solid #FF7575;
+}
+input[type=search] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=search]:focus {
+    border: 3px solid #555;
+}
 
 /* for custom scrollbar for webkit browser*/
 
